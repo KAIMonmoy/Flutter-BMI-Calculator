@@ -3,9 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:bmi_calculator/components/reusable_card.dart';
 import 'package:bmi_calculator/util/constants.dart';
 
+class ResultPageArguments {
+  ResultPageArguments(
+      {@required this.bmiResult,
+      @required this.resultText,
+      @required this.interpretation});
+
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+}
+
 class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final ResultPageArguments arguments =
+        ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
         appBar: AppBar(
           title: Text('BMI CALCULATOR'),
@@ -33,7 +47,7 @@ class ResultPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Text(
-                      'Normal',
+                      arguments.resultText,
                       style: TextStyle(
                         fontSize: 25.0,
                         fontWeight: FontWeight.bold,
@@ -41,14 +55,14 @@ class ResultPage extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      '18.5',
+                      arguments.bmiResult,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 95.0,
                       ),
                     ),
                     Text(
-                      'Your BMI is quite low. You should eat more!',
+                      arguments.interpretation,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 20.0,

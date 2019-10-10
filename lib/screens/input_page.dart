@@ -4,6 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bmi_calculator/util/constants.dart';
 import 'package:bmi_calculator/components/custom_card_icon.dart';
 import 'package:bmi_calculator/components/reusable_card.dart';
+import 'package:bmi_calculator/util/bmi_calculator_brain.dart';
+import 'result_page.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -261,7 +263,13 @@ class _InputPageState extends State<InputPage> {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, '/result_page');
+              BMICalculatorBrain bmiCalc =
+                  BMICalculatorBrain(weight: weight, height: height);
+              Navigator.pushNamed(context, '/result_page',
+                  arguments: ResultPageArguments(
+                      bmiResult: bmiCalc.getBMI(),
+                      resultText: bmiCalc.getResult(),
+                      interpretation: bmiCalc.getInterpretation()));
             },
             child: Container(
               color: BOTTOM_CONTAINER_COLOR,
