@@ -33,7 +33,9 @@ class ResultPage extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+              },
               child: Container(
                 color: BOTTOM_CONTAINER_COLOR,
                 width: double.infinity,
@@ -43,7 +45,7 @@ class ResultPage extends StatelessWidget {
                   child: Text(
                     "RE-CALCULATE YOUR BMI",
                     style: TextStyle(
-                      fontSize: 22.0,
+                      fontSize: 20.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

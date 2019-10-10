@@ -152,6 +152,7 @@ class _InputPageState extends State<InputPage> {
                             Transform.scale(
                               scale: 0.85,
                               child: FloatingActionButton(
+                                heroTag: null,
                                 onPressed: () {
                                   setState(() {
                                     ++weight;
@@ -168,6 +169,7 @@ class _InputPageState extends State<InputPage> {
                             Transform.scale(
                               scale: 0.85,
                               child: FloatingActionButton(
+                                heroTag: null,
                                 onPressed: () {
                                   setState(() {
                                     if (weight > 1) --weight;
@@ -218,6 +220,7 @@ class _InputPageState extends State<InputPage> {
                             Transform.scale(
                               scale: 0.85,
                               child: FloatingActionButton(
+                                heroTag: null,
                                 onPressed: () {
                                   setState(() {
                                     age++;
@@ -234,6 +237,7 @@ class _InputPageState extends State<InputPage> {
                             Transform.scale(
                               scale: 0.85,
                               child: FloatingActionButton(
+                                heroTag: null,
                                 onPressed: () {
                                   setState(() {
                                     if (age > 1) age--;
@@ -258,8 +262,7 @@ class _InputPageState extends State<InputPage> {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ResultPage()));
+              Navigator.pushNamed(context, '/result_page');
             },
             child: Container(
               color: BOTTOM_CONTAINER_COLOR,
@@ -270,7 +273,7 @@ class _InputPageState extends State<InputPage> {
                 child: Text(
                   "CALCULATE YOUR BMI",
                   style: TextStyle(
-                    fontSize: 22.0,
+                    fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
