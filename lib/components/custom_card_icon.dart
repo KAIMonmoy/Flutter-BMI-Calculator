@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
+import 'package:bmi_calculator/util/constants.dart';
 
 class CustomCardIcon extends StatelessWidget {
   final String iconLabel;

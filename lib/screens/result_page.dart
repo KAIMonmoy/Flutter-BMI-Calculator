@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'reusable_card.dart';
-import 'constants.dart';
+import 'package:bmi_calculator/components/reusable_card.dart';
+import 'package:bmi_calculator/util/constants.dart';
 
 class ResultPage extends StatelessWidget {
   @override
@@ -29,7 +29,33 @@ class ResultPage extends StatelessWidget {
             Expanded(
               child: ReusableCard(
                 cardColor: REUSABLE_CARD_COLOR_ACTIVE,
-                cardChild: Column(),
+                cardChild: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Text(
+                      'Normal',
+                      style: TextStyle(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF24D876),
+                      ),
+                    ),
+                    Text(
+                      '18.5',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 95.0,
+                      ),
+                    ),
+                    Text(
+                      'Your BMI is quite low. You should eat more!',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 20.0,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             GestureDetector(

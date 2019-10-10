@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'constants.dart';
-import 'custom_card_icon.dart';
-import 'reusable_card.dart';
-import 'result_page.dart';
+import 'package:bmi_calculator/util/constants.dart';
+import 'package:bmi_calculator/components/custom_card_icon.dart';
+import 'package:bmi_calculator/components/reusable_card.dart';
 
 class InputPage extends StatefulWidget {
   @override
