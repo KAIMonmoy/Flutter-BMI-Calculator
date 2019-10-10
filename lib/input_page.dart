@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'constants.dart';
 import 'custom_card_icon.dart';
 import 'reusable_card.dart';
+import 'result_page.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -255,11 +256,26 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            color: BOTTOM_CONTAINER_COLOR,
-            width: double.infinity,
-            height: BOTTOM_CONTAINER_HEIGHT,
-            margin: EdgeInsets.only(top: 10.0),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ResultPage()));
+            },
+            child: Container(
+              color: BOTTOM_CONTAINER_COLOR,
+              width: double.infinity,
+              height: BOTTOM_CONTAINER_HEIGHT,
+              margin: EdgeInsets.only(top: 10.0),
+              child: Center(
+                child: Text(
+                  "CALCULATE YOUR BMI",
+                  style: TextStyle(
+                    fontSize: 22.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
           ),
         ],
       ),
