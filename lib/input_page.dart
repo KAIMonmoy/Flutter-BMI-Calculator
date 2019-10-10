@@ -16,6 +16,7 @@ class _InputPageState extends State<InputPage> {
   CardGender selectedGender;
   int height = 180;
   int weight = 60;
+  int age = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -129,12 +130,127 @@ class _InputPageState extends State<InputPage> {
                           "WEIGHT",
                           style: LABEL_TEXT_STYLE,
                         ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
+                          children: <Widget>[
+                            Text(
+                              weight.toString(),
+                              style: NUMBER_TEXT_STYLE,
+                            ),
+                            Text(
+                              "kg",
+                              style: LABEL_TEXT_STYLE,
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Transform.scale(
+                              scale: 0.85,
+                              child: FloatingActionButton(
+                                onPressed: () {
+                                  setState(() {
+                                    ++weight;
+                                  });
+                                },
+                                backgroundColor: Color(0x998B8E98),
+                                child: Icon(
+                                  FontAwesomeIcons.plus,
+                                  size: 30.0,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                            Transform.scale(
+                              scale: 0.85,
+                              child: FloatingActionButton(
+                                onPressed: () {
+                                  setState(() {
+                                    if (weight > 1) --weight;
+                                  });
+                                },
+                                backgroundColor: Color(0x998B8E98),
+                                child: Icon(
+                                  FontAwesomeIcons.minus,
+                                  size: 30.0,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
                       ],
                     ),
                   ),
                 ),
                 Expanded(
-                  child: ReusableCard(cardColor: REUSABLE_CARD_COLOR_ACTIVE),
+                  child: ReusableCard(
+                    cardColor: REUSABLE_CARD_COLOR_ACTIVE,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          "AGE",
+                          style: LABEL_TEXT_STYLE,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
+                          children: <Widget>[
+                            Text(
+                              age.toString(),
+                              style: NUMBER_TEXT_STYLE,
+                            ),
+                            Text(
+                              "yr",
+                              style: LABEL_TEXT_STYLE,
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Transform.scale(
+                              scale: 0.85,
+                              child: FloatingActionButton(
+                                onPressed: () {
+                                  setState(() {
+                                    age++;
+                                  });
+                                },
+                                backgroundColor: Color(0x998B8E98),
+                                child: Icon(
+                                  FontAwesomeIcons.plus,
+                                  size: 30.0,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                            Transform.scale(
+                              scale: 0.85,
+                              child: FloatingActionButton(
+                                onPressed: () {
+                                  setState(() {
+                                    if (age > 1) age--;
+                                  });
+                                },
+                                backgroundColor: Color(0x998B8E98),
+                                child: Icon(
+                                  FontAwesomeIcons.minus,
+                                  size: 30.0,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
